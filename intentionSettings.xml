@@ -1,0 +1,5 @@
+<application>
+  <component name="IntentionManagerSettings">
+    <ignoreAction name="CSS/Extract Inline CSS" />
+  </component>
+</application>
