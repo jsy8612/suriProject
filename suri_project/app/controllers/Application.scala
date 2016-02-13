@@ -7,7 +7,7 @@ import play.api.Play.current
 
 object Application extends Controller {
 
-  def index = Action {
+  /*def index = Action {
     var outString = "Number is "
     val conn = DB.getConnection()
     try {
@@ -20,11 +20,11 @@ object Application extends Controller {
       conn.close()
     }
     Ok(outString)
-  }
+  }*/
 
-//  def index = Action { implicit request =>
-//    Ok(views.html.index())
-//  }
+  def index = Action { implicit request =>
+    Ok(views.html.index())
+  }
 
   def main = Action { implicit request =>
     Ok(views.html.main())
