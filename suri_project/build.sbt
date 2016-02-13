@@ -6,8 +6,15 @@ lazy val `suri_project` = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.7"
 
-libraryDependencies ++= Seq( jdbc , cache , ws   , specs2 % Test )
+resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+libraryDependencies ++= Seq (
+    jdbc,
+    cache,
+    ws,
+    specs2 % Test,
+    "mysql" % "mysql-connector-java" % "5.1.26"
+)
 
-resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"  
+unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
+
